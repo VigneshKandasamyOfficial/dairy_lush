@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Manage Products</title>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(23, 191, 29, 0.635);
+  max-width: 300px;
+  margin: 10px;
+  text-align: center;
+  font-family: 'Lucida Sans';
+  display:inline-block;
+  width:300px;
+  height:300px;
+}
+.price {
+  
+  font-size: 22px;
+}
+.a1 {
+  border-color:palegoldenrod;
+  padding: 12px; 
+  text-align: center;
+  width : 100%;
+  font-size: 18px;
+  background-color:palegreen;
+}
+a
+{
+  text-decoration: none;
+  color:red;
+}
+a:hover {
+  opacity: 0.7;
+  color:green;
+  
+  font-family: 'Times New Roman', Times, serif;
+}
+.card:hover{
+  background-color:palegreen;
+}
+.nav-link
+{
+   font-size:20px;
+}
+body{
+  background-color: lightpink;
+  font-family: 'Times New Roman', Times, serif;
+}
+h1,h5,p{
+  font-family: 'Times New Roman', Times, serif;
+}
+</style>
+</head>
+<body>
+<form><div class="container-fluid text-center">
+<div><h2>Medicine List</h2></div>
+<div th:if="${message}" class="alert alert-success text-center">
+[[${message}]]
+</div>
+<div class="card" th:each="prod:${listprod}">
+   <h5>[[${prod.id}]]</h5>
+  <h1>[[${prod.productname}]]</h1>
+  <p >[[${prod.price}]]</p>
+  <p>[[${prod.description}]]</p>
+  <button class="a1"><a th:href="@{'/admin/prod/edit/' + ${prod.id}}">Add to Cart</a></button>
+</div>
+</div></form>
+</body>
+</html>

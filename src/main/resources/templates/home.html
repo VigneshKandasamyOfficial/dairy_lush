@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+  <style>
+    /* body {
+      background-image: url("https://img.freepik.com/premium-photo/education-internet-addiction-concept-group-diverse-students-casual-outfits-standing-line-looking-gadgets-white-studio-background_116547-11769.jpg?w=2000");
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    } */
+
+
+    .ftco-navbar-light .navbar-nav>.nav-item>.nav-link {
+      font-size: 11px;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-weight: 400;
+      color: #000000;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 1 !important;
+    }
+
+    .nav-tabs {
+      border-bottom: 1px solid #76d176;
+    }
+
+    .nav-tabs .nav-item {
+      margin-bottom: -1px;
+    }
+
+    .nav-tabs .nav-link {
+      border: 1px solid transparent;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+
+    .nav-tabs .nav-link:hover,
+    .nav-tabs .nav-link:focus {
+      border-color: #76d176 #76d176 #76d176;
+    }
+
+    .nav-tabs .nav-link.disabled {
+      color: #76d176;
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    .nav-tabs .nav-link.active,
+    .nav-tabs .nav-item.show .nav-link {
+      color: #495057;
+      background-color: #76d176;
+      border-color: #76d176 #76d176 #76d176;
+    }
+
+    .carousel-indicators .active {
+      background-color: #ffffff;
+    }
+
+    .carousel-indicators li {
+      background-color: rgb(252, 252, 251);
+    }
+
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 50px;
+      padding: 30px;
+    }
+
+    .photo {
+      max-width: 31.333%;
+      padding: 0 10px;
+      height: 240px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+    </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" th:href="@{css/style.css}">
+  <link rel="stylesheet" href="css/jquery.timepicker.css" th:href="@{css/jquery.timepicker.css}">
+
+
+  <link rel="stylesheet" href="css/flaticon.css" th:href="@{css/flaticon.css}">
+  <link rel="stylesheet" href="css/icomoon.css" th:href="@{css/icomoon.css}">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css" th:href="@{css/animate.css.min.css}">
+  <link rel="stylesheet" href="css/magnific-popup.css" th:href="@{css/animate.css.min.css}">
+
+  <link rel="stylesheet" href="css/aos.css" th:href="@{css/aos.css}">
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" th:href="@{css/open-iconic-bootstrap.min.css}">
+  <link rel="stylesheet" href="css/animate.css" th:href="@{css/animate.css.min.css}">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css" th:href="@{css/animate.css.min.css}">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css" th:href="@{css/animate.css.min.css}">
+  <link rel="stylesheet" href="css/magnific-popup.css" th:href="@{css/animate.css.min.css}"> -->
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <style>
+        .ftco-navbar-light .navbar-nav>.nav-item>.nav-link {
+            font-size: 11px;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-weight: 400;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 1 !important;
+        }
+
+        .nav-tabs {
+            border-bottom: 1px solid #76d176;
+        }
+
+        .nav-tabs .nav-item {
+            margin-bottom: -1px;
+        }
+
+        .nav-tabs .nav-link {
+            border: 1px solid transparent;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+
+        .nav-tabs .nav-link:hover,
+        .nav-tabs .nav-link:focus {
+            border-color: #76d176 #76d176 #76d176;
+        }
+
+        .nav-tabs .nav-link.disabled {
+            color: #76d176;
+            background-color: transparent;
+            border-color: transparent;
+        }
+
+        .nav-tabs .nav-link.active,
+        .nav-tabs .nav-item.show .nav-link {
+            color: #495057;
+            background-color: #76d176;
+            border-color: #76d176 #76d176 #76d176;
+        }
+
+        .carousel-indicators .active {
+            background-color: #ffffff;
+        }
+
+        .carousel-indicators li {
+            background-color: rgb(252, 252, 251);
+        }
+
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 50px;
+            padding: 30px;
+        }
+
+        .photo {
+            max-width: 31.333%;
+            padding: 0 10px;
+            height: 240px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+        </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" th:href="@{css/style.css}">
+    <link rel="stylesheet" href="css/jquery.timepicker.css" th:href="@{css/jquery.timepicker.css}">
+
+
+    <link rel="stylesheet" href="css/flaticon.css" th:href="@{css/flaticon.css}">
+    <link rel="stylesheet" href="css/icomoon.css" th:href="@{css/icomoon.css}">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" th:href="@{css/animate.css.min.css}">
+    <link rel="stylesheet" href="css/magnific-popup.css" th:href="@{css/animate.css.min.css}">
+
+    <link rel="stylesheet" href="css/aos.css" th:href="@{css/aos.css}">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" th:href="@{css/open-iconic-bootstrap.min.css}">
+    <link rel="stylesheet" href="css/animate.css" th:href="@{css/animate.css.min.css}">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css" th:href="@{css/animate.css.min.css}">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" th:href="@{css/animate.css.min.css}">
+    <link rel="stylesheet" href="css/magnific-popup.css" th:href="@{css/animate.css.min.css}">
+
+
+</head>
+
+<body>
+
+    <!-- <nav class="navbar navbar-expand bg-secondary navbar-dark">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#"><span>Welcome Buddies!!!</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signin">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Your Account</a>
+        </li>
+      </ul>
+    </div>
+  </nav>  -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-success ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav lg-auto">
+
+                    <li class="nav-item active"><a href="/" class="nav-link">Homepage</a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+
+
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item">
+                        <div class="contact_logo">
+                            <div class="logo">
+                                <a href="index">
+
+                                    <img src="img/Rajuu Logo-01.png" class="logo_main" alt="" width="50" height="50">
+
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item"><a th:href="@{/user/view_product}" class="nav-link">Products</a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contactus</a></li>
+                    <li class="nav-item active dnone"><a href="#" class="nav-link"></a></li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link">[[${user.fullname}]]</a>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="GFG" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+
+            <li data-target="#GFG" data-slide-to="1"></li>
+            <li data-target="#GFG" data-slide-to="2"></li>
+        </ul>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="slider-item"
+                    style="background-image: url('images/bg_1.jpg'); background-repeat: no-repeat; background-size: cover;">
+                    <center> <img src="img/Rajuu Logo-01.png" style="width: 30%;
+height: 30%;" alt="GFG"> </center><br><br><br>
+                    <div class="carousel-caption">
+                        <h3 class="text-secondary">
+                            We serve Fresh Dairy Products
+                        </h3><br>
+
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="slider-item"
+                    style="background-image: url(images/bg_1.jpg); background-repeat: no-repeat; background-size: cover;">
+                    <center> <img src="img/Rajuu Logo-01.png" style="width: 30%;
+height: 30%;" alt="GFG"> </center><br><br><br>
+                    <div class="carousel-caption">
+                        <h3 class="text-secondary">
+                            100% Fresh &amp; Organic Dairy Products
+                        </h3><br>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#GFG" data-slide="prev">
+                <span class="">
+                </span>
+            </a>
+            <a class="carousel-control-next" href="#GFG" data-slide="next">
+                <span class="">
+                </span>
+            </a>
+        </div>
+
+
+
+
+
+        <br>
+        <div class="container "
+            style="background-image: url(images/milks.jpg);border-radius: 20px; background-repeat: no-repeat;background-size: cover">
+            <div class="text text-center p-3 br-4">
+                <h2 style="color: black;">What's Lush</h2>
+                <p style="text-align: justify;padding: 1ch; color: grey;"> We produce fresh raw milk in large amounts
+                    and
+                    distribute it across Erode. Our milk is delivered every morning and evening by our own team. </p>
+                <p><a href="#" class="btn btn-primary">Shop now</a></p>
+
+            </div>
+        </div>
+
+        <br>
+        <footer class="ftco-footer ftco-section" style="background-color: #28a745; color: white; height: 50%;">
+            <div class="container" style="color: white;">
+                <div class="row">
+                    <div class="mouse">
+                        <a href="#" class="mouse-icon">
+                            <div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row mb-1 ">
+                    <div class="col-md">
+                        <div class="ftco-footer-widget mb-4">
+
+                            <h2 class="ftco-heading-2" style="color: white;">DAIRYLUSH</h2>
+                            <!-- <h2><span class="icon-twitter" style="color: rgb(0, 0, 0);"></span></h2>
+         <h2><span class="icon-twitter" style="color: rgb(0, 0, 0);"></span></h2>
+         
+         <h2><span class="icon-twitter" style="color: rgb(0, 0, 0);"></span></h2> -->
+                            <ul class="ftco-heading-2">
+                                <h2><a href="#"><span class="icon-twitter"
+                                            style="color: rgb(255, 255, 255);"></span></a></h2>
+                                <h2><a href="#"><span class="icon-facebook" style="color: white;"></span></a></h2>
+                                <h2><a href="#"><span class="icon-instagram" style="color: white;"></span></a></h2>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md" style="color: white;">
+                        <div class="ftco-footer-widget mb-4 ml-md-5" style="color: white;">
+                            <h2 class="ftco-heading-2" style="color: white;">Menu</h2>
+                            <ul class="list-unstyled" style="color: white;">
+                                <li><a href="product-single.html" class="py-2 d-block" style="color: white;">Shop</a>
+                                </li>
+                                <li><a href="about.html" class="py-2 d-block" style="color: white;">About</a></li>
+
+                                <li><a href="contact.html" class="py-2 d-block" style="color: white;">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md" style="color: white;">
+                        <div class="ftco-footer-widget mb-4" style="color: white;">
+                            <h2 class="ftco-heading-2" style="color: white;">Have a Questions?</h2>
+                            <div class="block-23 mb-3">
+                                <ul>
+                                    <li><span class="icon icon-map-marker"></span><span
+                                            class="text">265,Madathupalayam</span></li>
+                                    <li><span class="icon icon-empty"></span><span class="text">,KS Palayam(Po)</span>
+                                    </li>
+                                    <li><span class="icon icon-empty"></span><span
+                                            class="text">,Perundurai-638002</span></li><br>
+                                    <li><a href="#"><span class="icon icon-phone" style="color: white;"></span><span
+                                                class="text" style="color: white;">+91 9080288552</span></a></li>
+                                    <li><a href="#"><span class="icon icon-envelope" style="color: white;"></span><span
+                                                class="text" style="color: white;">dairylush@gmail.com</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+
+        <!-- <div th:replace="${content}"></div>  -->
+
+</body>
+
+</html>
